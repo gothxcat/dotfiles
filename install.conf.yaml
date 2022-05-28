@@ -43,4 +43,4 @@
   - [cp -R firefox/chrome firefox/user.js ~/.mozilla/firefox/*.default*]
   - [nvim +PlugInstall +qa!]
   - [systemctl --user enable mpd.service]
-  - [sudo systemctl enable emptty.service]
+  - [sudo systemctl enable geoclue.service emptty.service]
