@@ -29,12 +29,14 @@ Desktop configuration for Linux
 
 ## Installation
 
-Shell commands run as user denoted by `$`:
+Clone this repository to `~/.dotfiles` or your preferred location.
+
+Run the shell commands as your user, denoted by `$`:
 
 `$ pikaur -Syu --noedit $(cat PACKAGES)`
 
 `$ ./install`
 
-- Reboot and start Sway from the emptty display manager
+Reboot and start Sway from the emptty display manager
 - Run `nvim`
 - Enter `:PlugInstall`
