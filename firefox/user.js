@@ -1,0 +1,30 @@
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+user_pref("svg.context-properties.content.enabled", true);
+user_pref("browser.tabs.tabClipWidth", 83);
+user_pref("security.insecure_connection_text.enabled", true);
+
+user_pref("general.smoothScroll.lines.durationMaxMS", 125);
+user_pref("general.smoothScroll.lines.durationMinMS", 125);
+user_pref("general.smoothScroll.mouseWheel.durationMaxMS", 200);
+user_pref("general.smoothScroll.mouseWheel.durationMinMS", 100);
+user_pref("general.smoothScroll.msdPhysics.enabled", true);
+user_pref("general.smoothScroll.other.durationMaxMS", 125);
+user_pref("general.smoothScroll.other.durationMinMS", 125);
+user_pref("general.smoothScroll.pages.durationMaxMS", 125);
+user_pref("general.smoothScroll.pages.durationMinMS", 125);
+user_pref("mousewheel.min_line_scroll_amount", 30);
+user_pref("mousewheel.system_scroll_override_on_root_content.enabled", true);
+user_pref("mousewheel.system_scroll_override_on_root_content.horizontal.factor", 175);
+user_pref("mousewheel.system_scroll_override_on_root_content.vertical.factor", 175);
+user_pref("toolkit.scrollbox.horizontalScrollDistance", 6);
+user_pref("toolkit.scrollbox.verticalScrollDistance", 2);
+
+user_pref("gfx.webrender.all", true);
+user_pref("gfx.webrender.compositor.force-enabled", true);
+user_pref("gfx.x11-egl.force-enabled", true);
+user_pref("gfx.x11-egl.force-disabled", false);
+user_pref("media.ffmpeg.vaapi.enabled", true);
+user_pref("media.ffmpeg.vaapi-drm-display.enabled", true);
+user_pref("media.ffvpx.enabled", false);
+user_pref("media.rdd-vpx.enabled", false);
+user_pref("media.navigator.mediadatadecoder_vpx_enabled", true);

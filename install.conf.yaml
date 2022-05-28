@@ -8,6 +8,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [cp -R firefox/chrome firefox/user.js ~/.mozilla/firefox/*.default*]
   - [sudo systemctl enable emptty.service]
 
 - link:

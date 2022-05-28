@@ -35,6 +35,8 @@ Run the shell commands as your user from the dotfiles directory, denoted by `$`:
 
 `$ pikaur -Syu --noedit $(cat PACKAGES)`
 
+Start and exit Firefox if it hasn't been started since installation.
+
 `$ ./install`
 
 Reboot and start Sway from the emptty display manager
