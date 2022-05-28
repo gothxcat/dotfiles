@@ -11,16 +11,21 @@ Desktop configuration for Linux.
 - OS: [Arch Linux](https://archlinux.org/)
 - Compositor: [Sway](https://swaywm.org/)
 - Status bar: [Waybar](https://github.com/Alexays/Waybar/)
-- Program launcher: [Wofi](https://hg.sr.ht/~scoopta/wofi)
+- Program launcher: [Wofi](https://hg.sr.ht/~scoopta/wofi/)
 - Shell: [zsh](https://zsh.sourceforge.io/)
-- Shell configuration: [grml-zsh-config](https://github.com/grml/grml-etc-core)
-- Terminal emulator: [Alacritty](https://github.com/alacritty/alacritty)
+- Shell configuration: [grml-zsh-config](https://github.com/grml/grml-etc-core/)
+- Terminal emulator: [Alacritty](https://github.com/alacritty/alacritty/)
 - Editor: [Neovim](https://neovim.io/)
-- Themes: [Catppuccin](https://github.com/catppuccin/catppuccin), [Dracula](https://github.com/dracula/dracula-theme)
-- Cursors: [Capitaine Cursors](https://github.com/keeferrourke/capitaine-cursors)
-- Fonts: [Noto Sans](https://github.com/googlefonts/noto-fonts)
-- Icons: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-- Dotfiles manager: [Dotbot](https://github.com/anishathalye/dotbot)
+- Themes: [Catppuccin](https://github.com/catppuccin/catppuccin/),
+  [Dracula](https://github.com/dracula/dracula-theme/)
+- Cursors: [Capitaine Cursors](https://github.com/keeferrourke/capitaine-cursors/)
+- Fonts: [Noto Sans](https://github.com/googlefonts/noto-fonts/)
+- Icons: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/)
+- Dotfiles manager: [Dotbot](https://github.com/anishathalye/dotbot/)
+
+## Acknowledgements
+
+Waybar configuration extended from [Jake Hamilton](https://github.com/jakehamilton/dotfiles/).
 
 ## Prerequisites
 
@@ -29,8 +34,8 @@ Desktop configuration for Linux.
 
 ## Installation
 
-Shell commands run as user denoted by `$`:
+Shell commands run as user denoted by `$`.
 
-`$ git clone https://github.com/gothxcat/dotfiles ~/.dotfiles && cd ~/.dotfiles && ./install`
+`$ git clone https://github.com/gothxcat/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install`
 
 Reboot and start Sway from the emptty display manager.
