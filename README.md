@@ -30,7 +30,7 @@ Waybar configuration extended from [Plus Ultra](https://github.com/jakehamilton/
 ## Prerequisites
 
 - `sudo` and sudo permissions for the current user
-- [pikaur](https://github.com/actionless/pikaur)
+- [pikaur](https://github.com/actionless/pikaur/)
 
 ## Installation
 
