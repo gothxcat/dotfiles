@@ -76,9 +76,14 @@ set whichwrap+=[,]
 " Shared clipboard
 set clipboard+=unnamedplus
 
+" File types
+autocmd FileType asm setlocal tabstop=8 shiftwidth=8 noexpandtab
+
 " Bindings
-"" insert - ctrl-z - undo
+"" INSERT - ctrl-z - undo
 imap <silent> <C-z> <C-o>:u<cr>
-"" insert - ctrl-left/right - skip word forwards/backwards
+"" INSERT - ctrl-left/right - skip word forwards/backwards
 imap <silent> ^[[1;5D^ <C-o>b<cr>
 imap <silent> ^[[1;5C^ <C-o>w<cr>
+"" INSERT - esc - escape terminal
+tnoremap <Esc> <C-\><C-n>
