@@ -4,12 +4,15 @@
       relink: true
       force: true
 
-- clean: ['~', '~/.config']
+- clean: ['~', '~/.config', '~/.local/share']
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [cp -R firefox/chrome firefox/user.js ~/.mozilla/firefox/*.default*]
-  - [sudo systemctl enable emptty.service]
+  - 
+    command: pikaur -Sy --needed --noedit --noconfirm $(cat packages.txt)
+    stdin: true
+    stdout: true
+    stderr: true
 
 - link:
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
@@ -34,3 +37,9 @@
 
 - create:
     - ~/.mpd
+
+- shell:
+  - [firefox -CreateProfile default-release]
+  - [cp -R firefox/chrome firefox/user.js ~/.mozilla/firefox/*.default*]
+  - [nvim +PlugInstall +qa!]
+  - [sudo systemctl enable emptty.service]

@@ -29,16 +29,8 @@ Desktop configuration for Linux.
 
 ## Installation
 
-Clone this repository to `~/.dotfiles` or your preferred location.
+Shell commands run as user denoted by `$`:
 
-Run the shell commands as your user from the dotfiles directory, denoted by `$`:
+`$ git clone https://github.com/gothxcat/dotfiles ~/.dotfiles && cd ~/.dotfiles && ./install`
 
-`$ pikaur -Syu --noedit $(cat PACKAGES)`
-
-Start and exit Firefox if it hasn't been started since installation.
-
-`$ ./install`
-
-Reboot and start Sway from the emptty display manager
-- Run `nvim`
-- Enter `:PlugInstall`
+Reboot and start Sway from the emptty display manager.
