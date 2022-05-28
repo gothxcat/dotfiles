@@ -42,4 +42,5 @@
   - [firefox -CreateProfile default-release]
   - [cp -R firefox/chrome firefox/user.js ~/.mozilla/firefox/*.default*]
   - [nvim +PlugInstall +qa!]
+  - [systemctl --user enable mpd.service]
   - [sudo systemctl enable emptty.service]
