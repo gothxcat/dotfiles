@@ -18,8 +18,10 @@ window#waybar.hidden {
 	margin-top: 8px;
 	margin-left: 12px;
 	margin-bottom: 0;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-top: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 4px;
 	border-radius: 26px;
 	background: #282a36;
 	transition: none;
@@ -28,21 +30,25 @@ window#waybar.hidden {
 #workspaces button {
     padding-left: 0px;
     padding-right: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
 	transition: none;
 	color: #f8f8f2;
 	background: transparent;
+    border-radius: 28px;
 	font-size: 16px;
 }
 
 #workspaces button.focused {
-	color: #9aedfe;
+	color: #282a36;
+    background: #9aedfe;
 }
 
 #workspaces button:hover {
 	transition: none;
 	box-shadow: inherit;
 	text-shadow: inherit;
-	color: #ff79c6;
+	background: #f69afe;
 }
 
 #mpd {
