@@ -1,6 +1,6 @@
 # Dotfiles
 
-Desktop configuration for Linux
+Desktop configuration for Linux.
 
 ## Screenshots
 
