@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Unlock KDE Wallet and start the Nextcloud client
+# See https://github.com/nextcloud/desktop/issues/1011
+
+WALLET="kdewallet"   # Name of wallet storing nextcloud client password
+MAX_TRIES=2          # Max. number of tries to ask for password
+i=0
+while [[ $i -lt $MAX_TRIES ]]; do
+    ((i++))
+    open=$(qdbus org.kde.kwalletd5 /modules/kwalletd5 isOpen "$WALLET")
+    if [[ "$open" = "true" ]]; then
+        break
+    fi
+    qdbus org.kde.kwalletd5 /modules/kwalletd5 open "$WALLET" 0 "nextcloud-client-starter" > /dev/null
+done
+exec nextcloud $@

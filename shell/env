@@ -1,0 +1,7 @@
+PATH="$HOME/scripts:$HOME/.local/bin:$PATH"
+EDITOR=nvim
+QT_QPA_PLATFORMTHEME=qt5ct
+MOZ_ENABLE_WAYLAND=1
+GTK_CSD=0
+LD_PRELOAD="${LD_PRELOAD+$LD_PRELOAD:}/usr/lib/libgtk3-nocsd.so.0"
+ANDROID_SDK_ROOT="$HOME/Android/Sdk"

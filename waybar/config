@@ -1,0 +1,67 @@
+{
+	"layer": "top",
+	"modules-left": ["sway/workspaces", "mpd", "sway/mode"],
+	"modules-center": [],
+	"modules-right": ["network", "cpu", "memory", "pulseaudio", "backlight", "battery", "clock"],
+	"mpd": {
+		"tooltip": false,
+		"format": "{stateIcon} {artist}{consumeIcon} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+		"format-disconnected": "ﳌ",
+		"format-stopped": "",
+        "state-icons": {
+            "playing": "",
+            "paused": ""
+        },
+        "artist-len": 30,
+        "album-len": 30,
+        "title-len": 30
+	},
+    "sway/mode": {
+        "tooltip": false
+    },
+    "network": {
+		"tooltip": false,
+		"format-wifi": "  {essid} {ipaddr}",
+		"format-ethernet": "  {ipaddr}",
+        "max-length": 40
+	},
+    "cpu": {
+		"tooltip": false,
+        "interval": 2,
+		"format": " {}%"
+	},
+    "memory": {
+		"tooltip": false,
+		"format": " {}%"
+	},
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+        "format-bluetooth": " {icon} {volume}%",
+		"format-icons": {
+			"default": ["奄", "奔", "墳"]
+		},
+        "format-muted": "ﱝ"
+	},
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format-alt": "{:%A %b %e %Y}"
+    }
+}

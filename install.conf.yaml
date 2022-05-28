@@ -1,0 +1,35 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- clean: ['~', '~/.config']
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [sudo systemctl enable emptty.service]
+
+- link:
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    ~/.config/dunst/dunstrc: dunst/dunstrc
+    ~/.config/fusuma/config.yml: fusuma/config.yml
+    ~/.config/gtk-3.0/settings.ini: gtk-3.0/settings.ini
+    ~/.config/mpd/mpd.conf: mpd/mpd.conf
+    ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim/wiki2html.sh: nvim/wiki2html.sh
+    ~/.local/share/nvim/site/autoload/plug.vim: nvim/vim-plug/plug.vim
+    ~/.config/sway/background: sway/background
+    ~/.config/sway/config: sway/config
+    ~/.config/sway/scripts: sway/scripts
+    ~/.config/waybar/config: waybar/config
+    ~/.config/waybar/style.css: waybar/style.css
+    ~/.config/wofi/style.css: wofi/style.css
+    ~/.env: shell/env
+    ~/.profile: shell/profile
+    ~/.icons/default: icons/default
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.zshrc: zsh/zshrc
+
+- create:
+    - ~/.mpd

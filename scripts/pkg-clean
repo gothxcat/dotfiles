@@ -1,0 +1,17 @@
+#!/bin/sh
+## Removes pacman/pikaur caches and orphaned dependencies.
+
+whereis pacman 1>/dev/null || exit $?
+whereis sudo 1>/dev/null || exit $?
+unused=$(pacman -Qtdq)
+args=$@
+
+echo "Removing all cached packages and orphaned dependencies..."
+
+if whereis pikaur 1>/dev/null; then
+	pikaur -Sc $args
+fi
+
+if [ -n "$unused" ]; then
+    sudo pacman -Rns $args $(printf "$unused" | tr $'\n' ' ')
+fi

@@ -1,0 +1,10 @@
+swipe:
+  3:
+    up:
+      command: "swaymsg workspace next"
+    down:
+      command: "swaymsg workspace prev"
+    left:
+      sendkey: "LEFTALT+RIGHT"  # history back
+    right:
+      sendkey: "LEFTALT+LEFT"   # history forward

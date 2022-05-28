@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+## Execute a command if not already running
+## Arguments: command, args
+
+if [[ -n "$1" ]]; then
+    pgrep -fx -u $(id -u) "$(echo "$@")" >/dev/null || exec "$@"
+fi

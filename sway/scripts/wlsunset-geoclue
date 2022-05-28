@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+## Start wlsunset with coordinates from Geoclue
+
+temp=$(mktemp)
+where-am-i > "$temp" &
+
+geoclue_done=0
+while [[ $geoclue_done != 1 ]]
+do
+    cat "$temp" |
+        awk '
+            /^Latitude:/ {
+                a = 1;
+                next
+            }
+            a && /^Longitude:/ {
+                b = 1
+            }
+            END {
+                exit !b
+            }' && geoclue_done=1
+    sleep 1
+done
+
+kill %%
+
+lat=$(cat "$temp" |
+    awk '
+        /Latitude:/ {
+            printf "%.4s", $2
+        }')
+
+long=$(cat "$temp" |
+    awk '
+    /Longitude:/ {
+        printf "%.4s", $2
+    }')
+
+rm "$temp"
+
+"${XDG_CONFIG_HOME-$HOME/.config}"/sway/scripts/exec-once wlsunset -l $lat -L $long
