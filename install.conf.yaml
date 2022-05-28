@@ -17,6 +17,7 @@
 - link:
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/dunst/dunstrc: dunst/dunstrc
+    ~/.config/fontconfig/conf.d/20-defaults.conf: fontconfig/20-defaults.conf
     ~/.config/fusuma/config.yml: fusuma/config.yml
     ~/.config/gtk-3.0/settings.ini: gtk-3.0/settings.ini
     ~/.config/mpd/mpd.conf: mpd/mpd.conf
