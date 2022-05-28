@@ -20,6 +20,7 @@ mpdris2
 ncmpcpp
 neovim
 nerd-fonts-noto-sans-mono
+nnn
 noto-fonts
 papirus-icon-theme
 playerctl
