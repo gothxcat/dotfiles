@@ -25,7 +25,7 @@ Desktop configuration for Linux.
 
 ## Acknowledgements
 
-Waybar configuration extended from [Jake Hamilton](https://github.com/jakehamilton/dotfiles/).
+Waybar configuration extended from [Plus Ultra](https://github.com/jakehamilton/dotfiles/).
 
 ## Prerequisites
 
