@@ -31,7 +31,7 @@ Desktop configuration for Linux
 
 Clone this repository to `~/.dotfiles` or your preferred location.
 
-Run the shell commands as your user, denoted by `$`:
+Run the shell commands as your user from the dotfiles directory, denoted by `$`:
 
 `$ pikaur -Syu --noedit $(cat PACKAGES)`
 
