@@ -7,13 +7,12 @@ dunst
 emptty
 file-roller
 firefox
-fusuma
 geoclue
 git
+gnome-keyring
 grml-zsh-config
 gtk3-nocsd-legacy-git
-kwallet
-kwallet-pam
+libsecret
 mpc
 mpd
 mpdris2
@@ -27,6 +26,7 @@ playerctl
 pulseaudio
 qt5ct-kde
 ristretto
+ruby-fusuma
 sway
 thunar
 tmux

@@ -17,6 +17,8 @@
 - link:
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/dunst/dunstrc: dunst/dunstrc
+    ~/.config/emptty: emptty/emptty
+    ~/.config/emptty-custom-sessions/sway-custom.desktop: emptty/emptty-custom-sessions/sway-custom.desktop
     ~/.config/fontconfig/conf.d/20-defaults.conf: fontconfig/20-defaults.conf
     ~/.config/fusuma/config.yml: fusuma/config.yml
     ~/.config/gtk-3.0/settings.ini: gtk-3.0/settings.ini
@@ -27,6 +29,7 @@
     ~/.config/sway/background: sway/background
     ~/.config/sway/config: sway/config
     ~/.config/sway/scripts: sway/scripts
+    ~/.config/sway/start: sway/start
     ~/.config/waybar/config: waybar/config
     ~/.config/waybar/style.css: waybar/style.css
     ~/.config/wofi/style.css: wofi/style.css
@@ -44,4 +47,5 @@
   - [cp -R firefox/chrome firefox/user.js ~/.mozilla/firefox/*.default*]
   - [nvim +PlugInstall +qa!]
   - [systemctl --user enable mpd.service]
+  - [sudo cp systemd/logind.conf /etc/systemd/logind.conf]
   - [sudo systemctl enable geoclue.service emptty.service]

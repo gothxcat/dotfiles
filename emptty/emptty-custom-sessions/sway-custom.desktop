@@ -1,0 +1,3 @@
+Name=Sway (Custom)
+Exec=.config/sway/start
+Environment=wayland

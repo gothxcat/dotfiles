@@ -38,4 +38,4 @@ Shell commands run as user denoted by `$`.
 
 `$ git clone https://github.com/gothxcat/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install`
 
-Reboot and start Sway from the emptty display manager.
+Reboot and select the `Sway (Custom)` entry from the emptty display manager.
