@@ -48,4 +48,4 @@
   - [nvim +PlugInstall +qa!]
   - [systemctl --user enable mpd.service]
   - [sudo cp systemd/logind.conf /etc/systemd/logind.conf]
-  - [sudo systemctl enable geoclue.service emptty.service]
+  - [sudo systemctl enable avahi-daemon.service emptty.service geoclue.service]

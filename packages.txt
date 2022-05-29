@@ -1,4 +1,5 @@
 alacritty
+avahi
 bash
 brightnessctl
 capitaine-cursors
