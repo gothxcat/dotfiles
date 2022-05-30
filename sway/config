@@ -300,7 +300,7 @@ exec_always {
     $scriptdir/exec-once $(which ruby) $(which fusuma)
     $scriptdir/exec-once dunst
     $scriptdir/exec-once mpDris2
-    $scriptdir/exec-once geoclue-agent
+    $scriptdir/exec-once /usr/lib/geoclue-2.0/demos/agent
     $scriptdir/exec-once nextcloud --background
     $scriptdir/wlsunset-geoclue
 }

@@ -2,7 +2,7 @@
 ## Start wlsunset with coordinates from Geoclue
 
 temp=$(mktemp)
-where-am-i > "$temp" &
+/usr/lib/geoclue-2.0/demos/where-am-i > "$temp" &
 
 geoclue_done=0
 while [[ $geoclue_done != 1 ]]
