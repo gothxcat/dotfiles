@@ -12,7 +12,6 @@ geoclue
 git
 gnome-keyring
 grml-zsh-config
-gtk3-nocsd-legacy-git
 libsecret
 mpc
 mpd
