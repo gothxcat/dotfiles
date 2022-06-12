@@ -12,6 +12,7 @@ geoclue
 git
 gnome-keyring
 grml-zsh-config
+libmupdf
 libsecret
 mpc
 mpd
@@ -24,12 +25,16 @@ noto-fonts
 papirus-icon-theme
 playerctl
 pulseaudio
+python-virtualenv
 qt5ct-kde
 ristretto
 ruby-fusuma
 sway
+tectonic
 thunar
 tmux
 wlsunset
 wofi
+zathura
+zathura-pdf-mupdf
 zsh

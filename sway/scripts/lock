@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+configdir="${XDG_CONFIG_HOME:-$HOME/.config}/sway"
+background="$configdir/background"
+
+swaylock -f -c 000000 -i "$background"

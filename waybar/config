@@ -21,7 +21,7 @@
     },
     "network": {
 		"tooltip": false,
-		"format-wifi": "  {essid} {ipaddr}",
+		"format-wifi": "  {ipaddr}",
 		"format-ethernet": "  {ipaddr}",
         "max-length": 40
 	},

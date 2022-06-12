@@ -7,12 +7,15 @@ if $TERM != "linux"
     Plug 'vim-airline/vim-airline-themes'
 endif
 
-Plug 'preservim/nerdcommenter'
 Plug 'bfrg/vim-cpp-modern'
-Plug 'mcchrish/nnn.vim'
+Plug 'lervag/vimtex'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+Plug 'preservim/nerdcommenter'
 Plug 'vimwiki/vimwiki'
 
 call plug#end()
+
+filetype plugin indent on
 
 " Themes
 if $TERM != "linux"
@@ -26,8 +29,14 @@ else
     colorscheme default
 endif
 
-" Commenter
-filetype plugin on
+" NERD Commenter
+let g:NERDCustomDelimiters = {
+    \ 'asm': { 'left': '/*', 'right': '*/' }
+\ }
+
+" VimTeX
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_method = 'tectonic'
 
 " Vimwiki
 let g:vimwiki_list = [{
@@ -35,7 +44,8 @@ let g:vimwiki_list = [{
     \ 'template_path': '~/Vimwiki/templates',
     \ 'template_default': 'default',
     \ 'template_ext': '.html',
-    \ 'path_html': '~/Vimwiki/html'}]
+    \ 'path_html': '~/Vimwiki/html'}
+\ ]
 
 " Graphical configuration
 syntax on
@@ -80,10 +90,25 @@ set clipboard+=unnamedplus
 autocmd FileType asm setlocal tabstop=8 shiftwidth=8 noexpandtab
 
 " Bindings
+
+"" leader - \
+let maplocalleader = "\\"
+
 "" INSERT - ctrl-z - undo
-imap <silent> <C-z> <C-o>:u<cr>
+imap <silent> <C-z> <C-o>:u<CR>
+
 "" INSERT - ctrl-left/right - skip word forwards/backwards
-imap <silent> ^[[1;5D^ <C-o>b<cr>
-imap <silent> ^[[1;5C^ <C-o>w<cr>
+imap <silent> ^[[1;5D^ <C-o>b<CR>
+imap <silent> ^[[1;5C^ <C-o>w<CR>
+
 "" INSERT - esc - escape terminal
 tnoremap <Esc> <C-\><C-n>
+
+"" FileType tex - NORMAL - leader-lw - write and compile LaTeX
+autocmd FileType tex nmap <Leader>lw :w <bar> :VimtexCompile<CR>
+
+"" FileType tex - INSERT - F2 - write and compile LaTeX
+autocmd FileType tex imap <F2> <C-o>:w <bar> :VimtexCompile<CR>
+
+"" NORMAL - leader-v - open file tree
+nnoremap <Leader>v <cmd>CHADopen<cr>

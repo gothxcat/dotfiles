@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [[ "${SHOW-}" == 1 ]]
+then
+    notify-send "Disabling screensaver..."
+fi
+
+uid=$(id -u)
+procs=$(pgrep -u $uid swaylock)
+
+if [[ -n "$procs" ]]
+then
+    kill $procs
+fi

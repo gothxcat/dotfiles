@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if [[ "${SHOW-}" == 1 ]]
+then
+    notify-send "Enabling screensaver..."
+fi
+
+configdir="${XDG_CONFIG_HOME:-$HOME/.config}/sway"
+scriptdir="$configdir/scripts"
+lock_command="$scriptdir/lock"
+
+# Lock screen after 300 seconds of inactivity, turn off displays after another 300 seconds, turn
+# displays back on after resume, lock before sleep
+
+swayidle -w \
+    timeout 300 "$lock_command" \
+    timeout 600 "swaymsg 'output * dpms off'" \
+    resume "swaymsg 'output * dpms on'" \
+    before-sleep "$lock_command" &

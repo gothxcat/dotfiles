@@ -45,7 +45,7 @@
 - shell:
   - [firefox -CreateProfile default-release]
   - [cp -R firefox/chrome firefox/user.js ~/.mozilla/firefox/*.default*]
-  - [nvim +PlugInstall +qa!]
+  - [nvim +PlugInstall +CHADdeps +qa!]
   - [systemctl --user enable mpd.service]
   - [sudo cp systemd/logind.conf /etc/systemd/logind.conf]
   - [sudo systemctl enable avahi-daemon.service emptty.service geoclue.service]

@@ -27,14 +27,14 @@ set $player alacritty -e ncmpcpp
 set $menu wofi --show drun | xargs swaymsg exec --
 
 # Background path
-set $bg $configdir/background
-
-# Lock command
-set $lock_command swaylock -f -c 000000 -i "$bg"
+set $background $configdir/background
 
 # Themes
 set $gtk_theme "Catppuccin-blue"
 set $icon_theme "Papirus-Dark"
+
+# Screenshot output path
+set $screenshot "~/Pictures/screenshot.png"
 
 
 ### Output configuration
@@ -42,7 +42,7 @@ set $icon_theme "Papirus-Dark"
 # Read `man 5 sway-output` for more information about this section.
 
 # Wallpaper
-output * bg $bg fill
+output * bg $background fill
 
 # Monitors
 output eDP-1 pos 0 0 scale 2
@@ -76,13 +76,7 @@ input "1739:52710:DLL0945:00_06CB:CDE6_Touchpad" {
 
 
 ### Idle configuration
-# Lock screen after 300 seconds of inactivity, turn off displays after another 300 seconds, turn
-# displays back on after resume, lock before sleep
-exec swayidle -w \
-        timeout 300 '$lock_command' \
-        timeout 600 'swaymsg "output * dpms off"' \
-        resume 'swaymsg "output * dpms on"' \
-        before-sleep '$lock_command'
+exec "SHOW=0 $scriptdir/idle"
 
 
 ### Key bindings
@@ -239,14 +233,22 @@ bindsym $mod+r mode "resize"
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
+    # Enable idle
+    bindsym $mod+Ctrl+Shift+i exec "SHOW=1 $scriptdir/idle"
+    # Disable idle
+    bindsym $mod+Ctrl+Shift+n exec "SHOW=1 $scriptdir/noidle"
     # Lock
-    bindsym $mod+Ctrl+Shift+l exec $lock
+    bindsym $mod+Ctrl+Shift+l exec "$scriptdir/lock"
     # Suspend
     bindsym $mod+Ctrl+Shift+s exec systemctl suspend
     # Power off
     bindsym $mod+Ctrl+Shift+p exec systemctl poweroff
     # Reboot
     bindsym $mod+Ctrl+Shift+r exec systemctl reboot
+
+# Screenshot
+    # Create a screenshot from mouse selection
+    bindsym $mod+Shift+s exec 'grim -g "$(slurp)" '"$screenshot"
 
 
 ### Borders
