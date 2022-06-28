@@ -24,6 +24,7 @@ nnn
 noto-fonts
 papirus-icon-theme
 playerctl
+procps-ng
 pulseaudio
 python-virtualenv
 qt5ct-kde
@@ -33,6 +34,7 @@ sway
 tectonic
 thunar
 tmux
+ttf-apple-emoji
 wlsunset
 wofi
 zathura

@@ -9,6 +9,16 @@ configdir="${XDG_CONFIG_HOME:-$HOME/.config}/sway"
 scriptdir="$configdir/scripts"
 lock_command="$scriptdir/lock"
 
+# Kill existing processes
+
+uid=$(id -u)
+procs=$(pgrep -u $uid swayidle)
+
+if [[ -n "$procs" ]]
+then
+    kill $procs
+fi
+
 # Lock screen after 300 seconds of inactivity, turn off displays after another 300 seconds, turn
 # displays back on after resume, lock before sleep
 

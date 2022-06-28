@@ -60,7 +60,7 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_options compose:ralt
 }
 
-input "4152:5652:SteelSeries_SteelSeries_Apex_Pro_TKL" {
+input "9494:60:Cooler_Master_Technology_Inc._MASTERKEYS_PRO_S" {
     xkb_layout gb
     xkb_options compose:ralt
 }
@@ -141,6 +141,9 @@ exec "SHOW=0 $scriptdir/idle"
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
+    # Switch to next/previous workspace
+    bindsym $mod+Ctrl+Right workspace next
+    bindsym $mod+Ctrl+Left workspace prev
     # Switch to the previously focused workspace
     bindsym $mod+Tab workspace back_and_forth
     # Move focused container to workspace
@@ -296,14 +299,19 @@ bar swaybar_command waybar
 
 
 ### Startup programs
-exec_always {
+exec {
     gsettings set org.gnome.desktop.interface gtk-theme "$gtk_theme"
     gsettings set org.gnome.desktop.interface icon-theme "$icon_theme"
-    $scriptdir/exec-once $(which ruby) $(which fusuma)
+}
+
+exec_always {
+    $scriptdir/exec-once lxpolkit
+    $scriptdir/exec-relaunch $(which ruby) $(which fusuma)
     $scriptdir/exec-once dunst
     $scriptdir/exec-once mpDris2
     $scriptdir/exec-once /usr/lib/geoclue-2.0/demos/agent
     $scriptdir/exec-once nextcloud --background
+    $scriptdir/exec-once /usr/lib/kdeconnectd
     $scriptdir/wlsunset-geoclue
 }
 

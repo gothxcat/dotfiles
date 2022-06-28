@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+## Restart a command or execute a command if not already running
+## Arguments: command, args
+
+if [[ -n "$1" ]]
+then
+    uid=$(id -u)
+    args=$(echo "$@")
+
+    pkill -fx -u $uid "$args" >/dev/null
+
+    while pgrep -fx -u $uid "$args" >/dev/null &&
+        ! pgrep -fx -u $uid "$0 $args"
+    do
+        read -t 0.5 <> <(:)
+    done
+
+    exec "$@"
+fi

@@ -6,7 +6,7 @@ then
 fi
 
 uid=$(id -u)
-procs=$(pgrep -u $uid swaylock)
+procs=$(pgrep -u $uid swayidle)
 
 if [[ -n "$procs" ]]
 then
