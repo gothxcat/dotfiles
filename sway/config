@@ -18,8 +18,8 @@ set $right l
 # Applications
 set $term alacritty
 set $web firefox
-set $fm thunar
-set $player alacritty -e ncmpcpp
+set $fm nemo
+set $player "$scriptdir"/music
 
 # Application launcher
 # Note: the final command must be passed to swaymsg so that the resulting window can be opened
@@ -30,7 +30,7 @@ set $menu wofi --show drun | xargs swaymsg exec --
 set $background $configdir/background
 
 # Themes
-set $gtk_theme "Catppuccin-blue"
+set $gtk_theme "Materia-dark"
 set $icon_theme "Papirus-Dark"
 
 # Screenshot output path
@@ -47,8 +47,7 @@ output * bg $background fill
 # Monitors
 output eDP-1 pos 0 0 scale 2
 output DP-5 pos 1920 0
-output DP-7 pos 4480 0
-
+output DP-7 disable
 
 ### Input configuration
 # Show names of inputs: swaymsg -t get_inputs
@@ -129,7 +128,7 @@ exec "SHOW=0 $scriptdir/idle"
     # mouse button for dragging.
     floating_modifier $mod normal
 
-# Workspace
+# Workspaces
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -141,11 +140,14 @@ exec "SHOW=0 $scriptdir/idle"
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
+
     # Switch to next/previous workspace
     bindsym $mod+Ctrl+Right workspace next
     bindsym $mod+Ctrl+Left workspace prev
+
     # Switch to the previously focused workspace
     bindsym $mod+Tab workspace back_and_forth
+
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -157,6 +159,10 @@ exec "SHOW=0 $scriptdir/idle"
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
+
+    # Move workspaces between outputs
+    bindsym $mod+Shift+bracketleft move workspace to output left
+    bindsym $mod+Shift+bracketright move workspace to output right
     
 # Layouts
     # You can "split" the current object of your focus with
@@ -181,6 +187,9 @@ exec "SHOW=0 $scriptdir/idle"
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    # Toggle sticky mode
+    bindsym $mod+slash sticky toggle
 
 # Scratchpad
     # Sway has a "scratchpad", which is a bag of holding for windows.

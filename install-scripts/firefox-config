@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+basedir="$HOME/.mozilla/firefox"
+for f in "$basedir"/*.default*
+do
+    ln -sf "$basedir"/chrome "$f"/chrome
+    ln -sf "$basedir"/user.js "$f"/user.js
+done

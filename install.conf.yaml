@@ -17,15 +17,14 @@
 - link:
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/dunst/dunstrc: dunst/dunstrc
-    ~/.config/emptty: emptty/emptty
-    ~/.config/emptty-custom-sessions/sway-custom.desktop: emptty/emptty-custom-sessions/sway-custom.desktop
     ~/.config/fontconfig/conf.d/20-defaults.conf: fontconfig/20-defaults.conf
     ~/.config/fusuma/config.yml: fusuma/config.yml
     ~/.config/gtk-3.0/settings.ini: gtk-3.0/settings.ini
     ~/.config/mpd/mpd.conf: mpd/mpd.conf
+    ~/.config/nvim/after: nvim/after
+    ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.config/nvim/wiki2html.sh: nvim/wiki2html.sh
-    ~/.local/share/nvim/site/autoload/plug.vim: nvim/vim-plug/plug.vim
     ~/.config/sway/background: sway/background
     ~/.config/sway/config: sway/config
     ~/.config/sway/scripts: sway/scripts
@@ -34,8 +33,13 @@
     ~/.config/waybar/style.css: waybar/style.css
     ~/.config/wofi/style.css: wofi/style.css
     ~/.env: shell/env
-    ~/.profile: shell/profile
     ~/.icons/default: icons/default
+    ~/.local/share/fonts/Noto Sans Mono Regular Nerd Font Complete.ttf:
+      fonts/Noto Sans Mono Regular Nerd Font Complete.ttf
+    ~/.local/share/nvim/site/autoload/plug.vim: nvim/vim-plug/plug.vim
+    ~/.mozilla/firefox/chrome: firefox/chrome
+    ~/.mozilla/firefox/user.js: firefox/user.js
+    ~/.profile: shell/profile
     ~/.tmux.conf: tmux/tmux.conf
     ~/.zshrc: zsh/zshrc
 
@@ -44,8 +48,10 @@
 
 - shell:
   - [firefox -CreateProfile default-release]
-  - [cp -R firefox/chrome firefox/user.js ~/.mozilla/firefox/*.default*]
+  - [./install-scripts/firefox-config]
   - [nvim +PlugInstall +CHADdeps +qa!]
-  - [systemctl --user enable mpd.service]
+  - [systemctl --user enable mpd.service pipewire.service
+      pipewire-pulse.service]
   - [sudo cp systemd/logind.conf /etc/systemd/logind.conf]
-  - [sudo systemctl enable avahi-daemon.service emptty.service geoclue.service]
+  - [sudo cp pam.d/login /etc/pam.d/login]
+  - [sudo systemctl enable avahi-daemon.service geoclue.service]

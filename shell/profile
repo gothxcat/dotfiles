@@ -1,4 +1,5 @@
-if [ -e ~/.env ]; then
+if [ -e ~/.env ]
+then
 	set -a
 	. ~/.env
 	set +a

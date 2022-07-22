@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+export KUNST_SIZE="500x500"
+export KUNST_POSITION="+0+0"
+export KUNST_MUSIC_DIR="$HOME/Music/Library/FLAC (16bit-44.1kHz)"
+alacritty -e ncmpcpp &
+kunst

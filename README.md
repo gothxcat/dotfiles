@@ -17,7 +17,7 @@ Desktop configuration for Linux.
 - Terminal emulator: [Alacritty](https://github.com/alacritty/alacritty/)
 - Editor: [Neovim](https://neovim.io/)
 - Themes: [Catppuccin](https://github.com/catppuccin/catppuccin/),
-  [Dracula](https://github.com/dracula/dracula-theme/)
+    [Materia Dark](https://github.com/nana-4/materia-theme/)
 - Cursors: [Capitaine Cursors](https://github.com/keeferrourke/capitaine-cursors/)
 - Fonts: [Noto Sans](https://github.com/googlefonts/noto-fonts/)
 - Icons: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/)
@@ -38,4 +38,4 @@ Shell commands run as user denoted by `$`.
 
 `$ git clone https://github.com/gothxcat/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install`
 
-Reboot and select the `Sway (Custom)` entry from the emptty display manager.
+Reboot and login to start the desktop.
