@@ -1,4 +1,3 @@
 " FileType c
 
-" Disable auto-indentation of labels
-set cinoptions+=g0
+set cinoptions+=:0,N-s
